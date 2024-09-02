@@ -1,5 +1,6 @@
 import { Categories } from "../assets/mockData";
 import hero from "../assets/images/hero.jpg";
+import InfoSection from "../components/infoSection";
 
 function home() {
   return (
@@ -21,13 +22,14 @@ function home() {
           <img src={hero} alt="" className="h-full w-full" />
 
           <div className="absolute top-16 left-8 text-white">
-            <p>Hi, Aqsa here welcome to my e-store</p>
-            <h2>Welcome again</h2>
-            <p>Million+ Products</p>
-            <button>Shop Now</button>
+            <p className="text-grey-600 mb-4">Hi, Welcome to our ESTORE</p>
+            <h2 className="text-3xl font-bold">Welcome Fashion Sale</h2>
+            <p className="text-xl mt-2.5 font-bold text-grey-800 ">Million+ Products Minimal Style</p>
+            <button className="bg-[#4a1fb8] px-8 py-1.5 text-white mt-4 hover:bg-[#4a4aef] transform transition-transform duration-300 hover:scale-105 rounded">Shop Now</button>
           </div>
         </div>
       </div>
+      <InfoSection/>                                                                                                
     </div>
   );
 }

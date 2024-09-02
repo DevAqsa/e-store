@@ -12,7 +12,7 @@ function Navbar() {
      <div className="container mx-auto px-4 md:px-16 md-px-24 py-4 flex justify-between items-center">
      
        <div className="text-lg font-bold">
-         <Link to="/">e-STORE</Link>
+         <Link to="/">EstoRe</Link>
        </div>
        <div className="relative flex-1 mx-4">
          <form>
