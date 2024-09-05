@@ -35,20 +35,20 @@ function Navbar() {
      </div>
 
      <div className="flex items-center justify-center space-x-10 py-4 text-md font-bold">
-      <Link className="hover:underline">
+      <Link  className="hover:underline">
       Home
       </Link>
 
-      <Link className="hover:underline">
+      <Link to="/shop" className="hover:underline">
      Shop</Link>
 
-     <Link className="hover:underline">
-     Shop</Link>
+     {/* <Link className="hover:underline">
+     Shop</Link> */}
 
-      <Link className="hover:underline">
+      <Link to="/contact" className="hover:underline">
       Contact</Link>
 
-      <Link className="hover:underline">
+      <Link  to="/about" className="hover:underline">
       About</Link>
      </div>
    </nav>

@@ -7,7 +7,7 @@ import img6 from "./images/img6.jpg"
 import img7 from "./images/img7.jpg"
 import img8 from "./images/img8.jpg"
 import img9 from "./images/img9.jpg"
-import img10 from "./images/img10.jpg"
+import img10 from "./images/img10.png"
 
 
 export const Categories = [
