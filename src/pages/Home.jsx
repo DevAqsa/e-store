@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { mockData } from "../assets/mockData";
 import ProductCard from "../components/ProductCard";
+import Shop from "./Shop";
 
 function home() {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ function home() {
   },);
 
   return (
+    <div>
     <div className="bg-white mt-2 px-4 md:px-16 lg:px-24">
       <div className="container mx-auto py-4 flex flex-col md:flex-row space-x-2">
         <div className="w-full md:w-3/12">
@@ -61,6 +63,8 @@ function home() {
         </div>
       </div>
     </div>
+     <Shop />
+     </div>
   );
 }
 

@@ -101,5 +101,56 @@ export const mockData = [
         name : "Product 10",
         Price : 79.99
 
-    }
+    },
+
+    {
+        id : 11,
+        image : img10,
+        name : "Product 10",
+        Price : 79.99
+
+    },
+
+    {
+        id : 12,
+        image : img8,
+        name : "Product 8",
+        Price : 19.99
+
+    },
+
+
+    // {
+    //     id : 13,
+    //     image : img10,
+    //     name : "Product 10",
+    //     Price : 79.99
+
+    // },
+
+    // {
+    //     id : 14,
+    //     image : img10,
+    //     name : "Product 10",
+    //     Price : 79.99
+
+    // },
+
+    // {
+    //     id : 15,
+    //     image : img8,
+    //     name : "Product 8",
+    //     Price : 19.99
+
+    // },
+
+    // {
+    //     id : 16,
+    //     image : img8,
+    //     name : "Product 8",
+    //     Price : 19.99
+
+    // },
+
+
 ]
