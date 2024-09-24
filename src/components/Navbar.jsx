@@ -3,7 +3,7 @@ import { FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
 function Navbar() {
-  const products = useSelector((state) => state.cart.products);
+  const products = useSelector(state => state.cart.products);
 
   return (
     <>
@@ -26,9 +26,9 @@ function Navbar() {
           <div className="flex items-center space-x-4">
             <Link to="/cart" className="relative">
               <FaShoppingCart className="text-lg" />
-              {products?.cartItems?.length > 0 && (
+              {products.length > 0 && (
                 <span className="absolute top-0 text-xs w-3 left-3 bg-red-800 rounded-full flex justify-center items-center text-white">
-                  {products.cartItems.length}
+                  {products.length}
                 </span>
               )}
             </Link>

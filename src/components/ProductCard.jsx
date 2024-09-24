@@ -1,29 +1,29 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types'
 import { FaStar } from "react-icons/fa";
-import addToCart from "../redux/cartSlice";
+import {addToCart} from "../redux/cartSlice";
 import { useDispatch } from "react-redux";
 
 
 function ProductCard({ product }) {
   const dispatch = useDispatch();
-  const handleClick = () => {
-    const action = { type: "ADD_TO_CART", payload: product };
-
-    // Debugging log to inspect the action before dispatch
-    console.log("Dispatching action:", action);
-
-    // Dispatch the action to Redux store
-    dispatch(addToCart(action));
-    alert("Product Added to the cart Successfully");
+ 
+  const handleAddToCart = (e, product) => {
+    e.stopPropagation()
+    e.preventDefault()
+    dispatch(addToCart(product))
+    alert("Product Added to the cart Successfully")
   };
-  // const handleAddToCart = (e, product) => {
-  //   e.stopPropagation()
-  //   e.preventDefault()
-  //   useDispatch(addToCart(product))
-  //   alert("Product Added to the cart Successfully")
-  // };
+
+  ProductCard.propTypes = {
+    product: PropTypes.shape({
+      // Add specific product properties here
+      image: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      Price: PropTypes.number.isRequired,
+    }).isRequired,
+  };
+
+  
   return (
     <div
       className="bg-white p-4 shadow rounded relative border transform
@@ -46,10 +46,10 @@ function ProductCard({ product }) {
 
       <div
         className="absolute bottom-4 right-2 flex items-center justify-center w-8 h-8 bg-[#4A1FB8] group text-white text-sm rounded-full hover:w-32 hover:bg-red-300 transition-all"
-        //  onClick={(e) => handleAddToCart (e, product)}
+         onClick={(e) => handleAddToCart (e, product)}
       >
         <span className="group-hover:hidden">+</span>
-        <span className="hidden group-hover:block" onClick={handleClick}>
+        <span className="hidden group-hover:block" >
           Add to Cart
         </span>
       </div>
