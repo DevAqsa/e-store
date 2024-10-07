@@ -10,6 +10,11 @@ const productSlice = createSlice({
   reducers: {
     setProducts(state, action) {
       state.products = action.payload;
+      // After setting products
+console.log("Products in Redux Store:", state.products);
+
+
+
     },
   },
 });

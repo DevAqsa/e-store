@@ -28,8 +28,9 @@ function home() {
           </div>
 
           <ul className="space-y-4 bg-grey-100 p-3 border">
-            {Categories.map((Category, index) => (
-              <li key={index} className="flex items-center text-sm font-medium">
+            {Categories.map((Category, work) => (
+              // eslint-disable-next-line no-undef
+              <li key={work} className="flex items-center text-sm font-medium">
                 <div className="w-2 h-2 border  border-[#4A1FB8] rounded-full mr-2"></div>
                 {Category}
               </li>
@@ -58,7 +59,7 @@ function home() {
         <h2 className="text-2xl font-bold mb-6 text-center">Top Products</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-col-5 gap-6 cursor-pointer">
           {products.products.slice(0,4).map(((product) =>(
-          <ProductCard product={product} key={"id"} />
+          <ProductCard product={product} key={product.id} />
           )))}
         </div>
       </div>

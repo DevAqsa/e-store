@@ -1,11 +1,17 @@
+/* eslint-disable react/jsx-no-undef */
 import { useState } from "react";
 import { FaTrash } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import Model from "../components/Model";
+import ChangeAddress from "../components/ChangeAddress";
 
 function Cart() {
   const cart = useSelector((state) => state.cart);
+  console.log('Cart state:', cart); 
+  // eslint-disable-next-line no-unused-vars
   const [address, setAddress] = useState("main street , 0012");
+  const [isModelOpen, setIsModelOpen] = useState(false);
 
   return (
     <div className="container mx-auto py-8 min-h-96 px-4 md:px-16 lg:px-24">
@@ -77,7 +83,12 @@ function Cart() {
                   <span className="text-sm font-bold">{address}</span>
                 </p>
 
-                <button className="text-blue-500 hover:underline mt-1 ml-2">Change Address</button>
+                <button
+                  className="text-blue-500 hover:underline mt-1 ml-2"
+                  onClick={() => setIsModelOpen(true)}
+                >
+                  Change Address
+                </button>
               </div>
 
               <div className="flex justify-between mb-4">
@@ -85,9 +96,18 @@ function Cart() {
                 <span>${cart.totalPrice.toFixed(2)}</span>
               </div>
 
-              <button className="w-full bg-[#4A1FB8] text-white py-2 hover:bg-blue-800">Proceed to CheckOut</button>
+              <button className="w-full bg-[#4A1FB8] text-white py-2 hover:bg-blue-800">
+                Proceed to CheckOut
+              </button>
             </div>
           </div>
+
+          <Model
+            isModelOpen={isModelOpen}
+            setIsModelOpen={setIsModelOpen}
+          >
+            <ChangeAddress setAddress={setAddress} setIsModelOpen={setIsModelOpen}/>
+          </Model>
         </div>
       ) : (
         // empty cart
