@@ -49,8 +49,8 @@ function Cart() {
                       </div>
                     </div>
 
-                    <div className="flex space-x-12 items-center">
-                      <p>${product.price}</p>
+                    {/* <div className="flex space-x-12 items-center">
+                      <p>${product.price.toFixed(2)}</p>
                       <div className="flex items-center justify-center border">
                         <button className="text-xl font-bold px-1.5 border-r">
                           -
@@ -63,7 +63,23 @@ function Cart() {
                       <button className="text-red-500 hover:text-red-700">
                         <FaTrash />
                       </button>
-                    </div>
+                    </div> */}
+
+<div className="flex space-x-12 items-center">
+  <p >${product.price ? product.price.toFixed(2) : '0.00'}</p>
+  <div className="flex items-center justify-center border">
+    <button className="text-xl font-bold px-1.5 border-r">
+      -
+    </button>
+    <p className="text-xl px-2">{product.quantity}</p>
+    <button className="text-xl px-1 border-1">+</button>
+  </div>
+
+  <p>${(product.price && product.quantity) ? (product.quantity * product.price).toFixed(2) : '0.00'}</p>
+  <button className="text-red-500 hover:text-red-700">
+    <FaTrash />
+  </button>
+</div>
                   </div>
                 ))}
               </div>
@@ -93,8 +109,10 @@ function Cart() {
 
               <div className="flex justify-between mb-4">
                 <span>Total Price: </span>
-                <span>${cart.totalPrice.toFixed(2)}</span>
+                <span>${cart.totalPrice?.toFixed(2) || '0.00'}</span>
               </div>
+
+
 
               <button className="w-full bg-[#4A1FB8] text-white py-2 hover:bg-blue-800">
                 Proceed to CheckOut

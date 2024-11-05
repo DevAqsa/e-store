@@ -15,6 +15,7 @@ console.log("Products in Redux Store:", state.products);
 
 
 
+
     },
   },
 });
